@@ -1,0 +1,41 @@
+
+<div class="container">
+<div class="card ">
+    <div class='card-header bg-primary text-white'>MobileCart</div>
+    <div class='card-body'>    
+        <table class='table'>
+                    <thead>
+                    <tr style="color: blue">
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Total Price</th>                        
+                    </tr>
+                </thead>
+                <tbody>  
+                    <tr>
+                        <td>{{a.cartName}}</td>     
+                        <td>
+                            <select [(ngModel)] = "selection2" (change)="selectionChanged()">
+                            <option *ngFor="let c of products" [value]="c.id">{{c.name}}</option>
+                            </select>
+                        </td>           
+                        <td>{{a.cartPrice}}</td>            
+                        <td>{{selection2*a.cartPrice}}</td>    
+                    </tr>
+                </tbody>
+            </table>
+    </div>
+        <div class='card-footer'>
+        <button type="button" class="btn btn-default"  
+                                style="color: #ff0080;" [routerLink]="['/']">
+                                <span  class="glyphicon glyphicon-shopping-cart" ></span> Continue
+                                Shopping
+                            </button>
+                        
+                            <button type="button" class="btn btn-success" [routerLink]="['/checkout']"  >
+                                Checkout <span class="glyphicon glyphicon-play"></span>
+                            </button>
+    </div>
+</div>
+</div>
